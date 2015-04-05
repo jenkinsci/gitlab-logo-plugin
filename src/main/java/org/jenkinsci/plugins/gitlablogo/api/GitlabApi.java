@@ -10,11 +10,15 @@ import org.codehaus.jackson.map.ObjectMapper;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GitlabApi {
   private final String endpoint;
   private final String privateToken;
   private final HttpClient httpClient = new HttpClient();
+
+  private static final Map<String, Project> PROJECT_CACHE = new HashMap<String, Project>();
 
   public GitlabApi(String endpoint, String privateToken){
     this.endpoint     = endpoint;
@@ -26,6 +30,17 @@ public class GitlabApi {
     String json = getContent(url);
     ObjectMapper mapper = new ObjectMapper();
     return mapper.readValue(json, Project.class);
+  }
+
+  public Project getCachedProject(String repositoryName) throws IOException {
+    Project cache = PROJECT_CACHE.get(repositoryName);
+    if (cache != null){
+      return cache;
+    }
+
+    Project project = getProject(repositoryName);
+    PROJECT_CACHE.put(repositoryName, project);
+    return project;
   }
 
   private String urlEncode(String str) throws UnsupportedEncodingException {
@@ -53,5 +68,9 @@ public class GitlabApi {
 
   public void setProxyHost(String hostname, int port){
     httpClient.getHostConfiguration().setProxyHost(new ProxyHost(hostname, port));
+  }
+
+  public static void clearCache(){
+    PROJECT_CACHE.clear();
   }
 }
