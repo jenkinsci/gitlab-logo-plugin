@@ -1,0 +1,1 @@
+# Jenkins GitLab Logo Plugin
