@@ -7,4 +7,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class Project {
   @JsonProperty("avatar_url")
   public String avatarUrl;
+
+  @JsonProperty("web_url")
+  public String webUrl;
 }

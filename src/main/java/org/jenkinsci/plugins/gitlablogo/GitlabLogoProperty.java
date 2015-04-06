@@ -38,15 +38,29 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
   }
 
   public String getIconUrl(){
-    GitlabLogoProperty.DescriptorImpl descriptor = getDescriptor();
-    GitlabApi api = new GitlabApi(descriptor.getEndpointUrl(), descriptor.getPrivateToken());
-    Project project = api.getCachedProject(getRepositoryName());
+    Project project = getProject();
 
     if(project == null){
       return "";
     } else{
       return project.avatarUrl;
     }
+  }
+
+  public String getRepositoryUrl(){
+    Project project = getProject();
+
+    if(project == null){
+      return "";
+    } else{
+      return project.webUrl;
+    }
+  }
+
+  private Project getProject() {
+    DescriptorImpl descriptor = getDescriptor();
+    GitlabApi api = new GitlabApi(descriptor.getEndpointUrl(), descriptor.getPrivateToken());
+    return api.getCachedProject(getRepositoryName());
   }
 
   @Extension
