@@ -29,9 +29,9 @@ class GitlabApiSpec {
     @Betamax(tape="getSingleProject", mode = TapeMode.READ_ONLY, match = [MatchRule.host, MatchRule.path])
     def "should return project"(){
       when:
-      String endpoint = "https://gitlab.com/api/v3"
+      String endpointUrl = "https://gitlab.com/api/v3"
       String privateToken = "xxxxxxxxxxxxx"
-      GitlabApi api = new GitlabApi(endpoint, privateToken)
+      GitlabApi api = new GitlabApi(endpointUrl, privateToken)
       api.setProxyHost("localhost", recorder.getProxyPort())
 
       then:
@@ -42,9 +42,9 @@ class GitlabApiSpec {
     @Betamax(tape="getSingleProject", mode = TapeMode.WRITE_ONLY, match = [MatchRule.host, MatchRule.path])
     def "record gitlab response to yaml"(){
       when:
-      String endpoint = "https://gitlab.com/api/v3"
+      String endpointUrl = "https://gitlab.com/api/v3"
       String privateToken = "INPUT_YOUR_TOKEN"
-      GitlabApi api = new GitlabApi(endpoint, privateToken)
+      GitlabApi api = new GitlabApi(endpointUrl, privateToken)
       api.setProxyHost("localhost", recorder.getProxyPort())
 
       then:

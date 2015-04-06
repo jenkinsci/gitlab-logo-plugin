@@ -14,19 +14,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GitlabApi {
-  private final String endpoint;
+  private final String endpointUrl;
   private final String privateToken;
   private final HttpClient httpClient = new HttpClient();
 
   private static final Map<String, Project> PROJECT_CACHE = new HashMap<String, Project>();
 
-  public GitlabApi(String endpoint, String privateToken){
-    this.endpoint     = endpoint;
+  public GitlabApi(String endpointUrl, String privateToken){
+    this.endpointUrl  = endpointUrl;
     this.privateToken = privateToken;
   }
 
   public Project getProject(String repositoryName) throws IOException {
-    String url = endpoint + "/projects/" + urlEncode(repositoryName);
+    String url = endpointUrl + "/projects/" + urlEncode(repositoryName);
     String json = getContent(url);
     ObjectMapper mapper = new ObjectMapper();
     return mapper.readValue(json, Project.class);
