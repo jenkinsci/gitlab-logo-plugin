@@ -25,14 +25,19 @@ public class GitlabApi {
     this.privateToken = privateToken;
   }
 
-  public Project getProject(String repositoryName) throws IOException {
-    String url = endpointUrl + "/projects/" + urlEncode(repositoryName);
-    String json = getContent(url);
-    ObjectMapper mapper = new ObjectMapper();
-    return mapper.readValue(json, Project.class);
+  public Project getProject(String repositoryName) {
+    String url = null;
+    try {
+      url = endpointUrl + "/projects/" + urlEncode(repositoryName);
+      String json = getContent(url);
+      ObjectMapper mapper = new ObjectMapper();
+      return mapper.readValue(json, Project.class);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 
-  public Project getCachedProject(String repositoryName) throws IOException {
+  public Project getCachedProject(String repositoryName) {
     Project cache = PROJECT_CACHE.get(repositoryName);
     if (cache != null){
       return cache;
