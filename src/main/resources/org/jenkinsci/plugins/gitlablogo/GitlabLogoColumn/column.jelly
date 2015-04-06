@@ -4,7 +4,14 @@
     <j:if test="${prop!=null}">
       <j:if test="${prop.available}">
         <a href="${prop.repositoryUrl}" title="${job.name}">
-          <img src="${prop.iconUrl}" class="icon${iconSize}" />
+          <j:choose>
+            <j:when test="${prop.defaultIcon}">
+              <img src="${resURL}/plugin/gitlab-logo/images/logo-white.png" class="icon${iconSize}" />
+            </j:when>
+            <j:otherwise>
+              <img src="${prop.iconUrl}" class="icon${iconSize}" />
+            </j:otherwise>
+          </j:choose>
         </a>
       </j:if>
     </j:if>

@@ -4,6 +4,7 @@ import hudson.Extension;
 import hudson.model.Job;
 import hudson.model.JobProperty;
 import hudson.model.JobPropertyDescriptor;
+import jenkins.model.Jenkins;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
 import org.jenkinsci.plugins.gitlablogo.api.GitlabApi;
@@ -29,7 +30,11 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
   }
 
   public boolean isAvailable(){
-    return StringUtils.isNotEmpty(repositoryName) && StringUtils.isNotEmpty(getIconUrl());
+    return StringUtils.isNotEmpty(repositoryName);
+  }
+
+  public boolean isDefaultIcon(){
+    return StringUtils.isEmpty(getIconUrl());
   }
 
   @Override
