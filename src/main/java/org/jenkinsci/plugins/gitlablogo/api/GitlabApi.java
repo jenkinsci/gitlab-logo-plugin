@@ -63,8 +63,7 @@ public class GitlabApi {
     }
 
     try {
-      byte[] responseBody = method.getResponseBody();
-      return new String(responseBody);
+      return method.getResponseBodyAsString();
 
     } finally {
       method.releaseConnection();
