@@ -11,7 +11,7 @@
     tags they use. Views are always organized according to its owner class,
     so it should be straightforward to find them.
   -->
-  <f:section title="Gitlab Account Setting">
+  <f:section title="GitLab Account Setting">
     <f:entry title="Endpoint URL" field="endpointUrl">
       <f:textbox />
     </f:entry>
