@@ -26,9 +26,8 @@ public class GitlabApi {
   }
 
   public Project getProject(String repositoryName) {
-    String url = null;
     try {
-      url = endpointUrl + "/projects/" + urlEncode(repositoryName);
+      String url = endpointUrl + "/projects/" + urlEncode(repositoryName);
       String json = getContent(url);
       ObjectMapper mapper = new ObjectMapper();
       return mapper.readValue(json, Project.class);
