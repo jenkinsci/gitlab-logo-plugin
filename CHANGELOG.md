@@ -1,13 +1,21 @@
 # Change Log
 
-## [gitlab-logo-1.0.0](https://github.com/jenkinsci/gitlab-logo-plugin/tree/gitlab-logo-1.0.0) (2015/04/09)
+## [gitlab-logo-1.0.1](https://github.com/jenkinsci/gitlab-logo-plugin/tree/gitlab-logo-1.0.1) (2015/08/05)
+[Full Changelog](https://github.com/jenkinsci/gitlab-logo-plugin/compare/gitlab-logo-1.0.0...gitlab-logo-1.0.1)
+
+**Closed issues:**
+
+- Add version badge [\#2](https://github.com/jenkinsci/gitlab-logo-plugin/issues/2)
 
 **Merged pull requests:**
 
+- Old icon -\> new icon [\#5](https://github.com/jenkinsci/gitlab-logo-plugin/pull/5) ([sue445](https://github.com/sue445))
+
+## [gitlab-logo-1.0.0](https://github.com/jenkinsci/gitlab-logo-plugin/tree/gitlab-logo-1.0.0) (2015/04/09)
+**Merged pull requests:**
+
 - Gitlab -\> GitLab [\#4](https://github.com/jenkinsci/gitlab-logo-plugin/pull/4) ([sue445](https://github.com/sue445))
-
 - Resolved findbugs warning [\#3](https://github.com/jenkinsci/gitlab-logo-plugin/pull/3) ([sue445](https://github.com/sue445))
-
 - Feature/setup jenkinsci [\#1](https://github.com/jenkinsci/gitlab-logo-plugin/pull/1) ([sue445](https://github.com/sue445))
 
 
