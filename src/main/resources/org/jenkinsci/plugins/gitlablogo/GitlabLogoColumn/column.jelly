@@ -6,7 +6,7 @@
         <a href="${prop.repositoryUrl}" title="${job.name}">
           <j:choose>
             <j:when test="${prop.defaultIcon}">
-              <img src="${resURL}/plugin/gitlab-logo/images/logo-white.png" class="icon${iconSize}" />
+              <img src="${resURL}/plugin/gitlab-logo/images/gitlab-logo.png" class="icon${iconSize}" />
             </j:when>
             <j:otherwise>
               <img src="${prop.iconUrl}" class="icon${iconSize}" />
