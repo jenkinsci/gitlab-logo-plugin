@@ -19,16 +19,18 @@
       <f:password />
     </f:entry>
     <f:entry title="Clear cache" field="clearCache">
-      <input type="button" value="clear" onclick="clearCache();"/>
+      <input type="button" value="clear" onclick="GitlabLogoProperty.clearCache();"/>
     </f:entry>
     <script>
-      function clearCache() {
+      var GitlabLogoProperty = {
+        clearCache: function(){
           new Ajax.Request("${rootURL}/descriptor/org.jenkinsci.plugins.gitlablogo.GitlabLogoProperty/clearCache", {
             onSuccess: function(rsp) {
-                alert("Clear cache done");
+              alert("Clear cache done");
             }
           });
-      }
+        }
+      };
     </script>
   </f:section>
 </j:jelly>
