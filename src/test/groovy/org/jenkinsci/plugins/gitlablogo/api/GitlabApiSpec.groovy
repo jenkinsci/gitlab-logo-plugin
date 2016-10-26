@@ -13,6 +13,8 @@ import org.yaml.snakeyaml.introspector.Property
 import spock.lang.Ignore
 import spock.lang.Specification
 
+import java.security.Security
+
 @RunWith(Enclosed)
 class GitlabApiSpec {
   static class getProject extends Specification {
@@ -24,6 +26,10 @@ class GitlabApiSpec {
       TapePropertyUtils.metaClass.sort = {Set<Property> properties, List<String> names ->
         new LinkedHashSet(properties.sort(true, new OrderedPropertyComparator(names)))
       }
+
+      // Ignore javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException
+      // http://www.richardnichols.net/2012/08/arrrggh-java-security-cert-certificateexception-certificates-does-not-conform-to-algorithm-constraints/
+      Security.setProperty("jdk.certpath.disabledAlgorithms", "")
     }
 
     @Betamax(tape="getSingleProject", mode = TapeMode.READ_ONLY, match = [MatchRule.host, MatchRule.path])
