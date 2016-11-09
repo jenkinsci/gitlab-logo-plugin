@@ -51,7 +51,7 @@ public class GitlabApi {
     return URLEncoder.encode(str, "UTF-8");
   }
 
-  private String getContent(String url) throws IOException {
+  protected String getContent(String url) throws IOException {
     HttpMethod method = new GetMethod(url);
     method.addRequestHeader("PRIVATE-TOKEN", privateToken);
 
@@ -67,10 +67,6 @@ public class GitlabApi {
     } finally {
       method.releaseConnection();
     }
-  }
-
-  public void setProxyHost(String hostname, int port){
-    httpClient.getHostConfiguration().setProxyHost(new ProxyHost(hostname, port));
   }
 
   public static void clearCache(){
