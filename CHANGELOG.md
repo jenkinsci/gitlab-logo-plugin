@@ -1,17 +1,29 @@
 # Change Log
 
-## [gitlab-logo-1.0.1](https://github.com/jenkinsci/gitlab-logo-plugin/tree/gitlab-logo-1.0.1) (2015/08/05)
+## [gitlab-logo-1.0.3](https://github.com/jenkinsci/gitlab-logo-plugin/tree/gitlab-logo-1.0.3) (2016-11-09)
+[Full Changelog](https://github.com/jenkinsci/gitlab-logo-plugin/compare/gitlab-logo-1.0.2...gitlab-logo-1.0.3)
+
+**Merged pull requests:**
+
+- Update parent version [\#9](https://github.com/jenkinsci/gitlab-logo-plugin/pull/9) ([sue445](https://github.com/sue445))
+
+## [gitlab-logo-1.0.2](https://github.com/jenkinsci/gitlab-logo-plugin/tree/gitlab-logo-1.0.2) (2016-11-08)
+[Full Changelog](https://github.com/jenkinsci/gitlab-logo-plugin/compare/gitlab-logo-1.0.1...gitlab-logo-1.0.2)
+
+**Merged pull requests:**
+
+- Ignore javax.net.ssl.SSLHandshakeException on Cloudbees Jenkins [\#8](https://github.com/jenkinsci/gitlab-logo-plugin/pull/8) ([sue445](https://github.com/sue445))
+- Do not enable gitlab logo column by default. [\#7](https://github.com/jenkinsci/gitlab-logo-plugin/pull/7) ([christ66](https://github.com/christ66))
+- Add namespace [\#6](https://github.com/jenkinsci/gitlab-logo-plugin/pull/6) ([sue445](https://github.com/sue445))
+
+## [gitlab-logo-1.0.1](https://github.com/jenkinsci/gitlab-logo-plugin/tree/gitlab-logo-1.0.1) (2015-08-05)
 [Full Changelog](https://github.com/jenkinsci/gitlab-logo-plugin/compare/gitlab-logo-1.0.0...gitlab-logo-1.0.1)
-
-**Closed issues:**
-
-- Add version badge [\#2](https://github.com/jenkinsci/gitlab-logo-plugin/issues/2)
 
 **Merged pull requests:**
 
 - Old icon -\> new icon [\#5](https://github.com/jenkinsci/gitlab-logo-plugin/pull/5) ([sue445](https://github.com/sue445))
 
-## [gitlab-logo-1.0.0](https://github.com/jenkinsci/gitlab-logo-plugin/tree/gitlab-logo-1.0.0) (2015/04/09)
+## [gitlab-logo-1.0.0](https://github.com/jenkinsci/gitlab-logo-plugin/tree/gitlab-logo-1.0.0) (2015-04-09)
 **Merged pull requests:**
 
 - Gitlab -\> GitLab [\#4](https://github.com/jenkinsci/gitlab-logo-plugin/pull/4) ([sue445](https://github.com/sue445))
