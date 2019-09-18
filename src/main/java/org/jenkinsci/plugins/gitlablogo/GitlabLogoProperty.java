@@ -4,6 +4,7 @@ import hudson.Extension;
 import hudson.model.Job;
 import hudson.model.JobProperty;
 import hudson.model.JobPropertyDescriptor;
+import hudson.util.Secret;
 import jenkins.model.Jenkins;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
@@ -64,14 +65,14 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
 
   private Project getProject() {
     DescriptorImpl descriptor = getDescriptor();
-    GitlabApi api = new GitlabApi(descriptor.getEndpointUrl(), descriptor.getPrivateToken());
+    GitlabApi api = new GitlabApi(descriptor.getEndpointUrl(), descriptor.getPrivateToken().getPlainText());
     return api.getCachedProject(getRepositoryName());
   }
 
   @Extension
   public static final class DescriptorImpl extends JobPropertyDescriptor
   {
-    private String privateToken;
+    private Secret privateToken;
     private String endpointUrl;
 
     public DescriptorImpl(){
@@ -100,7 +101,7 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
     public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
       // To persist global configuration information,
       // set that to properties and call save().
-      privateToken = formData.getString("privateToken");
+      privateToken = Secret.fromString(formData.getString("privateToken"));
       endpointUrl  = formData.getString("endpointUrl");
       // ^Can also use req.bindJSON(this, formData);
       //  (easier when there are many fields; need set* methods for this, like setUseFrench)
@@ -108,7 +109,7 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
       return super.configure(req, formData);
     }
 
-    public String getPrivateToken() {
+    public Secret getPrivateToken() {
       return privateToken;
     }
 
