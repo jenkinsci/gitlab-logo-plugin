@@ -1,5 +1,11 @@
 # Change Log
 
+## [gitlab-logo-1.0.5](https://github.com/jenkinsci/gitlab-logo-plugin/tree/gitlab-logo-1.0.5) (2019-10-08)
+[Full Changelog](https://github.com/jenkinsci/gitlab-logo-plugin/compare/gitlab-logo-1.0.4...gitlab-logo-1.0.5)
+
+- Use HTTPS URLs in pom.xml
+  - https://github.com/jenkinsci/gitlab-logo-plugin/pull/13
+
 ## [gitlab-logo-1.0.4](https://github.com/jenkinsci/gitlab-logo-plugin/tree/gitlab-logo-1.0.4) (2019-09-18)
 [Full Changelog](https://github.com/jenkinsci/gitlab-logo-plugin/compare/gitlab-logo-1.0.3...gitlab-logo-1.0.4)
 
