@@ -1,7 +1,7 @@
 # Jenkins GitLab Logo Plugin
 
 [![Plugin Version](https://img.shields.io/jenkins/plugin/v/gitlab-logo.svg)](https://plugins.jenkins.io/gitlab-logo)
-[![Build Status](https://ci.jenkins.io/buildStatus/icon?job=Plugins/gitlab-logo-plugin/master)](https://ci.jenkins.io/job/Plugins/gitlab-logo-plugin/master)
+[![Build Status](https://ci.jenkins.io/buildStatus/icon?job=Plugins/gitlab-logo-plugin/master)](https://ci.jenkins.io/job/Plugins/job/gitlab-logo-plugin/job/master/)
 
 Display GitLab Repository Icon on dashboard
 
