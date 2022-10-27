@@ -1,15 +1,17 @@
 package org.jenkinsci.plugins.gitlablogo;
 
+import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.Extension;
 import hudson.model.Job;
 import hudson.model.JobProperty;
 import hudson.model.JobPropertyDescriptor;
 import hudson.util.Secret;
-import jenkins.model.Jenkins;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
-import org.jenkinsci.plugins.gitlablogo.api.GitlabApi;
-import org.jenkinsci.plugins.gitlablogo.api.Project;
+import org.gitlab4j.api.GitLabApi;
+import org.gitlab4j.api.GitLabApiException;
+import org.gitlab4j.api.ProjectApi;
+import org.gitlab4j.api.models.Project;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 import org.kohsuke.stapler.StaplerResponse;
@@ -49,7 +51,7 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
     if(project == null){
       return "";
     } else{
-      return project.avatarUrl;
+      return project.getAvatarUrl();
     }
   }
 
@@ -59,14 +61,21 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
     if(project == null){
       return "";
     } else{
-      return project.webUrl;
+      return project.getWebUrl();
     }
   }
 
   private Project getProject() {
-    DescriptorImpl descriptor = getDescriptor();
-    GitlabApi api = new GitlabApi(descriptor.getEndpointUrl(), descriptor.getPrivateToken().getPlainText());
-    return api.getCachedProject(getRepositoryName());
+    return GitlabLogoProjectCache.PROJECT_CACHE.computeIfAbsent(getRepositoryName(), name -> {
+      DescriptorImpl descriptor = getDescriptor();
+      GitLabApi gitLabApi = new GitLabApi(descriptor.getEndpointUrl(), descriptor.getPrivateToken().getPlainText());
+      ProjectApi projectApi = gitLabApi.getProjectApi();
+      try {
+        return projectApi.getProject(name);
+      } catch (GitLabApiException e) {
+        throw new RuntimeException(e);
+      }
+    });
   }
 
   @Extension
@@ -93,7 +102,7 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
     }
 
     @Override
-    public GitlabLogoProperty newInstance(StaplerRequest req, JSONObject formData) throws FormException{
+    public GitlabLogoProperty newInstance(@NonNull StaplerRequest req, JSONObject formData) throws FormException{
       return req.bindJSON(GitlabLogoProperty.class, formData);
     }
 
@@ -118,7 +127,7 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
     }
 
     public void doClearCache(StaplerRequest req, StaplerResponse rsp){
-      GitlabApi.clearCache();
+      GitlabLogoProjectCache.PROJECT_CACHE.clear();
     }
   }
 }

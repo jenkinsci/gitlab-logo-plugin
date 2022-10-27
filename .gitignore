@@ -1,23 +1,15 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Java template
-*.class
+target
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# mvn hpi:run
+work
 
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-
-target/
-work/
-
-# IntelliJ
-.idea/
+# IntelliJ IDEA project files
 *.iml
-*.ipr
 *.iws
+*.ipr
+.idea
+
+# Eclipse project files
+.settings
+.classpath
+.project
