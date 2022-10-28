@@ -11,7 +11,7 @@
 
   <groupId>org.jenkins-ci.plugins</groupId>
   <artifactId>gitlab-logo</artifactId>
-  <version>${revision}${changelist}</version>
+  <version>${revision}</version>
   <packaging>hpi</packaging>
 
   <name>GitLab Logo Plugin</name>
