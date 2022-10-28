@@ -1,3 +1,4 @@
+<?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core">
   <td>
     <j:set var="prop" value="${job.getProperty('org.jenkinsci.plugins.gitlablogo.GitlabLogoProperty')}"/>
