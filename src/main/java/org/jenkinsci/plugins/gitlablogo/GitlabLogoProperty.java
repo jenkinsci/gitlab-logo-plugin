@@ -26,7 +26,7 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
   }
 
   /**
-   * We'll use this from the <tt>config.jelly</tt>.
+   * We'll use this from the config.jelly.
    */
   public String getRepositoryName() {
     return repositoryName;
