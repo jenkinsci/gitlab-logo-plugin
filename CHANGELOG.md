@@ -1,5 +1,11 @@
 # Change Log
 
+## [gitlab-logo-1.1.0](https://github.com/jenkinsci/gitlab-logo-plugin/tree/gitlab-logo-1.1.0) (2022-10-28)
+[Full Changelog](https://github.com/jenkinsci/gitlab-logo-plugin/compare/gitlab-logo-1.0.5...gitlab-logo-1.1.0)
+
+- Refresh plugin
+  - https://github.com/jenkinsci/gitlab-logo-plugin/pull/30
+
 ## [gitlab-logo-1.0.5](https://github.com/jenkinsci/gitlab-logo-plugin/tree/gitlab-logo-1.0.5) (2019-10-08)
 [Full Changelog](https://github.com/jenkinsci/gitlab-logo-plugin/compare/gitlab-logo-1.0.4...gitlab-logo-1.0.5)
 
