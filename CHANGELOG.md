@@ -1,5 +1,10 @@
 # Change Log
 
+## [gitlab-logo-1.1.2](https://github.com/jenkinsci/gitlab-logo-plugin/tree/1.1.2) (2023-05-20)
+[Full Changelog](https://github.com/jenkinsci/gitlab-logo-plugin/compare/1.1.1...1.1.2)
+
+- Fixed failures in releases
+
 ## [gitlab-logo-1.1.1](https://github.com/jenkinsci/gitlab-logo-plugin/tree/1.1.1) (2023-05-19)
 [Full Changelog](https://github.com/jenkinsci/gitlab-logo-plugin/compare/1.1.0...1.1.1)
 
