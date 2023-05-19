@@ -1,5 +1,12 @@
 # Change Log
 
+## [gitlab-logo-1.1.1](https://github.com/jenkinsci/gitlab-logo-plugin/tree/1.1.1) (2023-05-19)
+[Full Changelog](https://github.com/jenkinsci/gitlab-logo-plugin/compare/1.1.0...1.1.1)
+
+- Replace Prototype.js with native JavaScript
+  - https://github.com/jenkinsci/gitlab-logo-plugin/pull/49
+- Update dependencies
+
 ## [gitlab-logo-1.1.0](https://github.com/jenkinsci/gitlab-logo-plugin/tree/1.1.0) (2022-10-28)
 [Full Changelog](https://github.com/jenkinsci/gitlab-logo-plugin/compare/gitlab-logo-1.0.5...1.1.0)
 
