@@ -1,4 +1,7 @@
-# Change Log
+# Change Log (v125+)
+See. https://github.com/jenkinsci/gitlab-logo-plugin/releases
+
+# Change Log (v1.x)
 
 ## [gitlab-logo-1.1.2](https://github.com/jenkinsci/gitlab-logo-plugin/tree/1.1.2) (2023-05-20)
 [Full Changelog](https://github.com/jenkinsci/gitlab-logo-plugin/compare/1.1.1...1.1.2)
