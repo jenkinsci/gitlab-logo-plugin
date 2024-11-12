@@ -11,7 +11,7 @@
 
   <groupId>org.jenkins-ci.plugins</groupId>
   <artifactId>gitlab-logo</artifactId>
-  <version>${revision}</version>
+  <version>${changelist}</version>
   <packaging>hpi</packaging>
 
   <name>GitLab Logo Plugin</name>
@@ -42,8 +42,7 @@
 
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
-    <revision>1.1.2</revision>
-    <changelist>-SNAPSHOT</changelist>
+    <changelist>999999-SNAPSHOT</changelist>
     <jenkins.version>2.452.4</jenkins.version>
     <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>
   </properties>
