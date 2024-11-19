@@ -12,6 +12,7 @@
     tags they use. Views are always organized according to its owner class,
     so it should be straightforward to find them.
   -->
+  <st:adjunct includes="org.jenkinsci.plugins.gitlablogo.GitlabLogoProperty.clear-cache"/>
   <f:section title="GitLab Account Setting">
     <f:entry title="Endpoint URL" field="endpointUrl">
       <f:textbox />
@@ -20,21 +21,7 @@
       <f:password />
     </f:entry>
     <f:entry title="Clear cache" field="clearCache">
-      <input type="button" value="clear" onclick="GitlabLogoProperty.clearCache();"/>
+      <button data-root-url="${rootURL}" class="jenkins-button gll-clear-cache-button">Clear</button>
     </f:entry>
-    <script>
-      var GitlabLogoProperty = {
-        clearCache: function(){
-          fetch("${rootURL}/descriptor/org.jenkinsci.plugins.gitlablogo.GitlabLogoProperty/clearCache", {
-            method: "post",
-            headers: crumb.wrap({}),
-          }).then((rsp) => {
-            if (rsp.ok) {
-              alert("Clear cache done");
-            }
-          });
-        }
-      };
-    </script>
   </f:section>
 </j:jelly>
