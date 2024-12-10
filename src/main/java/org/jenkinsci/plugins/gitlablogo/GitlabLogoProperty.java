@@ -13,7 +13,7 @@ import org.gitlab4j.api.GitLabApiException;
 import org.gitlab4j.api.ProjectApi;
 import org.gitlab4j.api.models.Project;
 import org.kohsuke.stapler.DataBoundConstructor;
-import org.kohsuke.stapler.StaplerRequest;
+import org.kohsuke.stapler.StaplerRequest2;
 import org.kohsuke.stapler.StaplerResponse;
 
 public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
@@ -102,12 +102,12 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
     }
 
     @Override
-    public GitlabLogoProperty newInstance(@NonNull StaplerRequest req, JSONObject formData) throws FormException{
+    public GitlabLogoProperty newInstance(@NonNull StaplerRequest2 req, JSONObject formData) throws FormException{
       return req.bindJSON(GitlabLogoProperty.class, formData);
     }
 
     @Override
-    public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
+    public boolean configure(StaplerRequest2 req, JSONObject formData) throws FormException {
       // To persist global configuration information,
       // set that to properties and call save().
       privateToken = Secret.fromString(formData.getString("privateToken"));
@@ -126,7 +126,7 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
       return endpointUrl;
     }
 
-    public void doClearCache(StaplerRequest req, StaplerResponse rsp){
+    public void doClearCache(StaplerRequest2 req, StaplerResponse rsp){
       GitlabLogoProjectCache.PROJECT_CACHE.clear();
     }
   }

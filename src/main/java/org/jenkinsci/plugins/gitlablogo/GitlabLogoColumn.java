@@ -5,7 +5,7 @@ import hudson.model.Descriptor;
 import hudson.views.ListViewColumn;
 import hudson.views.ListViewColumnDescriptor;
 import net.sf.json.JSONObject;
-import org.kohsuke.stapler.StaplerRequest;
+import org.kohsuke.stapler.StaplerRequest2;
 
 public class GitlabLogoColumn extends ListViewColumn {
     @Extension
@@ -22,7 +22,7 @@ public class GitlabLogoColumn extends ListViewColumn {
         }
 
         @Override
-        public ListViewColumn newInstance(StaplerRequest request, JSONObject formData) throws FormException {
+        public ListViewColumn newInstance(StaplerRequest2 request, JSONObject formData) throws FormException {
             return new GitlabLogoColumn();
         }
     }
