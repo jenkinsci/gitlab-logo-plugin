@@ -14,7 +14,7 @@ import org.gitlab4j.api.ProjectApi;
 import org.gitlab4j.api.models.Project;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest2;
-import org.kohsuke.stapler.StaplerResponse;
+import org.kohsuke.stapler.StaplerResponse2;
 
 public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
   private final String repositoryName;
@@ -126,7 +126,7 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
       return endpointUrl;
     }
 
-    public void doClearCache(StaplerRequest2 req, StaplerResponse rsp){
+    public void doClearCache(StaplerRequest2 req, StaplerResponse2 rsp){
       GitlabLogoProjectCache.PROJECT_CACHE.clear();
     }
   }
