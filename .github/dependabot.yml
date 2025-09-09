@@ -12,6 +12,8 @@ updates:
       day: "saturday"
       time: "05:00"
       timezone: "Asia/Tokyo"
+    cooldown:
+      default-days: 7
     assignees:
       - "sue445"
 
@@ -19,3 +21,5 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    cooldown:
+      default-days: 7
