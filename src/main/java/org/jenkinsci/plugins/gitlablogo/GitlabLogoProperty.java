@@ -7,7 +7,6 @@ import hudson.model.JobProperty;
 import hudson.model.JobPropertyDescriptor;
 import hudson.util.Secret;
 import net.sf.json.JSONObject;
-import org.apache.commons.lang.StringUtils;
 import org.gitlab4j.api.GitLabApi;
 import org.gitlab4j.api.GitLabApiException;
 import org.gitlab4j.api.ProjectApi;
@@ -33,11 +32,11 @@ public class GitlabLogoProperty extends JobProperty<Job<?, ?>> {
   }
 
   public boolean isAvailable(){
-    return StringUtils.isNotEmpty(repositoryName);
+    return repositoryName != null && !repositoryName.isEmpty();
   }
 
   public boolean isDefaultIcon(){
-    return StringUtils.isEmpty(getIconUrl());
+    return getIconUrl() == null || getIconUrl().isEmpty();
   }
 
   @Override
